@@ -10,7 +10,7 @@ ABOUT:
   that logs you out while you're looking at the damned thing.
 
 CONFIG:
-  Open up config.php and put in your username and password. Suprised?
+  Open up config.php and put in your username and password. Surprised?
 
 RUNNING:
   Running via CLI:
@@ -33,7 +33,7 @@ FAQ:
   Q: Halp, i'ma gettin' an "Auth Failed". Double You Tea Eff.
   A: Youre username/password is wrong.
 
-  Q: Wowzers, now i'ma gettin' a "ERROR: render_min($punch_time);" thingy.
+  Q: Wowzers, now i'ma gettin' an "ERROR: render_min($punch_time);" thingy.
   A: Nice find! please push that error into the issue queue on github!
 
   Q: Is mah password and username safe?
