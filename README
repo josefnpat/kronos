@@ -1,0 +1,47 @@
+ABOUT:
+  Kronos @ RIT does a great job managing time, but a horrible time presenting
+  it's information on the website. This script pulls the html down (since there
+  is no API), tears it apart, and builds it into an object, that one could
+  use in other software if they wanted to. As for the base use of this script,
+  it spits out the configured user's kronos information, and json data if one
+  wanted to use it as an api. The best thing about this script is that the
+  username/password is stored, and it sums up the totals for the weeks, instead
+  of just giving you a total of two weeks. And there's no annoying javascript
+  that logs you out while you're looking at the damned thing.
+
+CONFIG:
+  Open up config.php and put in your username and password. Suprised?
+
+RUNNING:
+  Running via CLI:
+    Run with `php ./build.php <arg>`
+  Arguments (<arg>):
+    `debug` .. Debug data.
+    `json` .. outputs the objects as json.
+
+INSTALLATION:
+  curl_init() does not exist error? You need the curl libs.
+  Ubuntu: sudo apt-get install curl libcurl3 libcurl3-dev php5-curl
+
+WHAT:
+  I've notice that the output can be too long for conky, so if I were you,
+  I would suggest pushing the data via the json command to something else,
+  or just writing a quick script in /usr/games/kronos that just calls the
+  script wherever you placed it.
+
+FAQ:
+  Q: Halp, i'ma gettin' an "Auth Failed". Double You Tea Eff.
+  A: Youre username/password is wrong.
+
+  Q: Wowzers, now i'ma gettin' a "ERROR: render_min($punch_time);" thingy.
+  A: Nice find! please push that error into the issue queue on github!
+
+  Q: Is mah password and username safe?
+  A: As safe as the config.php is, I guess.
+
+  Q: Barf! Your code blows.
+  A: Yeah, well, it's just meant to be a quick script.
+
+LIBRARIES and SUCH:
+  Table Extractor Script (tabe.php) : Copyright Jack Sleight - reallyshiny.com
+  Original curl code (now kronos.php): David Walsh - davidwalsh.name
