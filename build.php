@@ -5,6 +5,9 @@ $data = shell_exec("php ".dirname($_SERVER['SCRIPT_NAME'])."/kronos.php");// Get
 if(preg_match("@Inappropriate authentication@",$data)){
   die("Auth Fail\n");
 }
+if(preg_match("@The server encountered an internal error and was unable to complete your request.@",$data)){
+  die("Server Fail\n");
+}
 
 $datatab = explode("<h2>Punches</h2>",$data); // Split the html in half.
 
