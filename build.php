@@ -44,7 +44,7 @@ while(count($punches)){//For each "punch"
       $dates[$last_date][] = $punch;
     }
     $visual = "\t ".format_time(punch_min($punch))." ... ".$punch->in." to ".($punch->out=="&nbsp;"?"now":$punch->out)." \n";
-    if($day < 6){
+    if($day < 7){ // Seven days in a week? Who would have thought?
       $totals_obj->week1 += punch_min($punch);
       $week1 .= $date_visual . $visual;
     } else {
@@ -52,6 +52,8 @@ while(count($punches)){//For each "punch"
       $week2 .= $date_visual . $visual;
     }
     punch_min($punch);
+  } else { // Even though there's no data, we need to increment the date.
+    $day++;
   }
 }
 
