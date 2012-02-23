@@ -117,6 +117,9 @@ function render_min($punch_time){
     }
     return $m[1]*60+$m[2]+$ampm;
   } else {
-    die("ERROR: render_min($punch_time);\n");
+    $valid_alt_times = array("missingpunch-seeyoursupervisor");
+    if(!in_array($punch_time,$valid_alt_times)){
+      die("ERROR: render_min($punch_time);\n");
+    }
   }
 }
