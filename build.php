@@ -1,5 +1,6 @@
 #!/usr/bin/php
 <?php
+include("config.php");
 $data = shell_exec("php ".dirname($_SERVER['SCRIPT_NAME'])."/kronos.php");// Get the output of the kronos page
 
 if(preg_match("@Inappropriate authentication@",$data)){
@@ -72,10 +73,21 @@ if(isset($_GET['json'])){
   print_r($dates); // Debug
 } else {
   echo "Pay Period Week 1\n".$week1;
-  echo "Total:".format_time($totals_obj->week1)."\n";
+  echo "Total: ".format_time($totals_obj->week1)."\n";
+  echo extra_info($totals_obj->week1);
   if($week2 != ""){
     echo "Pay Period Week 2\n".$week2;
-    echo "Total:".format_time($totals_obj->week2)."\n";
+    echo "Total: ".format_time($totals_obj->week2)."\n";
+    echo extra_info($totals_obj->week2);
+  }
+}
+
+// Determines extra information if $weekhours is set
+function extra_info($t){
+  global $weekhours;
+  if(isset($weekhours)){
+    $remaining_time = $weekhours*60-$t;
+    return "Remaining: ".format_time($remaining_time)."\n";
   }
 }
 

@@ -11,7 +11,11 @@ ABOUT:
 
 CONFIG:
   Open up config.php and put in your username and password. Surprised?
-
+  
+  Extra Credit:
+  Define `$workhours` to the number of hours you work in integer form to see
+  your remaining hours. (e.g.: `$workhours = 40;`)
+  
 RUNNING:
   Running via CLI:
     Run with `php ./build.php <arg>`
